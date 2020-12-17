@@ -35,7 +35,7 @@ p{
     padding: 15px 15px 15px 15px;
     border-radius: 35px ;
     background-image:linear-gradient(#FF79DA, #9356DC);
-    box-shadow: 0px 2px 10px #C7C7C7;
+    box-shadow:0px 2px 10px #929191;
 }
 .colorrose2{
 	font-family: Roboto;
@@ -43,9 +43,8 @@ p{
     color: white;
     padding: 15px 60px 15px 60px;
     border-radius: 35px;
-    box-shadow: 0px 2px 10px #C7C7C7;
+    box-shadow: 0px 2px 10px #929191;
 }
-
 .option{
 	display: flex;
 	align-items: stretch;
@@ -109,7 +108,11 @@ a{
 	height: 25px;
 	padding: 7px 15px 3px 15px;
 	position: absolute;
-	right: 10%;
+}
+.newcon{
+	display: flex;
+    justify-content: flex-end;
+    margin-right: 1rem;
 }
 .margin{
 	display: flex;
@@ -120,7 +123,6 @@ a{
     margin-bottom: 25px;
 }
 footer {
-    width: 100%;
     padding: 5px 5px 5px 5px;
 	background-color: #3A3A3A;
 }
@@ -141,6 +143,9 @@ footer a{
 	background-color:#F1F1F1;
 	margin-top: 60px;
 	padding-bottom: 50px;
+}
+.menu{
+	padding-top:3.4rem;
 }
 .espace4{
 	margin-top: 30px;
@@ -166,17 +171,22 @@ h4{
 .marge span {
 	margin-bottom: 5px;
 }
-header{
+.headmenu{
 	display: flex;
-	align-items: center;
-	margin: auto;
-    padding: 0.5rem;
+    align-items: center;
+    margin: auto;
+   	padding: 0.5rem;
+    width: 100%;
+    background-color: white;
+   	position: fixed;
+    z-index: 100;
+    box-shadow: 0px 2px 10px #929191;
 }
 .banner div{
 	width: 100%;
 	margin-bottom: 0px;
 	margin-top: -20px;
-	border-radius:25px;
+	border-radius:25px 25px 0px 0px;
 	background-color: white;
 	position: absolute;
 	font-family: Shrikhand;
@@ -197,7 +207,8 @@ header{
 	text-align: right !important;
 }
 .explore{
-
+	margin-left: 0.1rem;
+    margin-right: 0.1rem;
 	margin-bottom: 20px;
 }
 .rest{
@@ -220,24 +231,30 @@ header{
     justify-content: space-between;
     padding: 0.5rem;
 }
-.like2{
+.regroupe .like2{
+	margin-top: -70px;
 	display: flex;
 	align-items: center; 
 	justify-content: space-between;
 }
-.like2 .like{
+.regroupe .like2 .like{
 	color: grey;
 	font-size:25px; 
     margin-right: 30px; 
 }
-.num:hover i{
+.like2 .like{
+	color: grey;
+	font-size:25px;
+}
+
+.like2:hover i{
     color: #9c47fc;
     display: block;
     background: -webkit-linear-gradient(#9356DC,#FF79DA);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-.num:hover .deux{
+.like2:hover .deux{
 	animation-name: like;
 	animation-duration: 1s; 
 }
@@ -266,13 +283,13 @@ header{
 footer .contenair{
 	margin-bottom: 20px;
 }
-.num:hover .un{
+.like2:hover .un{
 	display: none;
 }
 .deux{
   display: none !important;
 }
-.num:hover .deux{
+.like2:hover .deux{
   display: block !important;
 }
 .un{
@@ -348,30 +365,32 @@ footer .contenair{
 	animation: fadein 6s;
 }
 .progress {
-    &__bar {
+    {
         animation: progress-bar 1000ms;
     }
 }
 .load{
-	display: none;
 	z-index: 1;
+	display: flex;
 	position: fixed;
 	background: white;
 	width: 100%;
 	height: 100%;
 	justify-content: center;
-	animation:load 3s;
-    animation-iteration-count: 1;
+    animation: load 1s linear forwards;
 }
 @keyframes load {
-    0%{
-		opacity: 0.4;
-    }
-    100% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    pointer-events: none;
+  }
 }
-
 .loader {
     position: fixed;
     top:40%; 
@@ -379,10 +398,8 @@ footer .contenair{
     height: 150px;
     border-radius: 50%;
     background: linear-gradient(#9356DC,#FF79DA);
-    animation: loader 3s linear ; 
-    animation-iteration-count: 1;
+    animation: loader .5s linear infinite;
 }
-
 @keyframes loader {
     0% {
         transform: rotate(0deg);
@@ -391,7 +408,6 @@ footer .contenair{
         transform: rotate(360deg);
     }
 }
-
 .loader:after {
     content: '';
     position: absolute;
@@ -402,4 +418,85 @@ footer .contenair{
     background: #f1f1f1;
     border: solid white 10px;
     border-radius: 50%;
+}
+.regroupe{
+	background-color: white;
+	border-radius: 25px;
+    position: relative;
+}
+
+@media(min-width: 1024px){
+	.restaurant{
+	display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+	}
+	.contenair{
+		width: 70vw;
+	}
+	.new{
+		right:auto;
+		margin-left: 23vw !important; 
+	}
+	.restaurant__menu{
+		margin-bottom: 0px;
+	}
+	.banner div{
+		width: 70vw;
+		position: relative;
+   		margin-top: -50px;
+	}
+	.regroupe{
+		box-shadow: 0px 2px 10px #929191;
+		width: 70vw;
+		margin:auto;
+		position: relative;
+		background-color: white;
+		border-radius: 25px;
+	}
+	.repas1, .repas2, .repas3 {
+		padding:0px 35px;
+	}
+	.regroupe .like2{
+		margin-top: -300px;
+	}
+	.order{
+		margin-bottom: 0px;
+		padding-bottom: 50px;
+	}
+	.titlebanner{
+		margin-top: 25px;
+		margin-left: 3rem;
+	}
+	.regroupe .like2, .regroupe .like {
+		margin-right: 2rem;
+	}
+	.mainmenu{
+		background-color: #E1DEDE;
+		padding-bottom: 100px;
+	}
+	.headmenu{
+		display: flex;
+    	align-items: center;
+    	margin: auto;
+   		padding: 0.3rem;
+   		width: 100%;
+    	background-color: white;
+   		position: fixed;
+    	z-index: 100;
+    	box-shadow: 0px 2px 10px #929191;
+	}
+	header{
+		background-color: white;
+		padding: 0.3rem;
+	}
+	p{
+		font-size: 17px;
+	}
+	.ohmyfood{
+		font-size: 30px;
+	}
+	.fas{
+		margin-left: 1rem;
+	}
 }
