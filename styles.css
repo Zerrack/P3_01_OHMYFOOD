@@ -37,7 +37,11 @@ p{
     background-image:linear-gradient(#FF79DA, #9356DC);
     box-shadow:0px 2px 10px #929191;
 }
+.colorrose:hover{
+	box-shadow:0px 2px 10px #4e4d4d;
+}
 .colorrose2{
+	transition: 0.3s;
 	font-family: Roboto;
 	background-image:linear-gradient(#FF79DA, #9356DC);
     color: white;
@@ -81,7 +85,7 @@ a{
     text-decoration: none;
     color: black;
 } 
-.fas{
+.footer .fas{
 	margin-right: 5px;
 }
 .restaurant__menu{
@@ -314,23 +318,36 @@ footer .contenair{
 	justify-content: space-between;
 }
 .option2 i{
-	display: none;
-	color: white;
-	border-radius: 0px 15px 15px 0px;
-	background-color:#99E2D0; 
-}
-.option2:hover i{
-	animation:check 0.5s ease-in-out;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-.option2 .fas{
-	margin-right: 0px; 
+.option2:hover i{
+	animation:rotate 0.8s;
+}
+@keyframes rotate{
+	0%{
+		transform: rotate(0deg);
+    }
+    100% {
+		transform: rotate(360deg);
+	}
 }
 .option2:hover{
 	display: grid;
-	grid-template-columns: 10fr 1fr;   
+	grid-template-columns: 5fr 1fr;   
+}
+.animation{
+	display: none;
+	border-radius: 0px 15px 15px 0px;
+	color: white;
+	background-color: #99E2D0;
+}
+.option2:hover .animation{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	animation:check 0.5s ease-in-out;
 }
 @keyframes check{
 	0%{
@@ -338,14 +355,18 @@ footer .contenair{
 	}
 	100%{
 		transform: translateX(-0%);
-	}
+	}	
 }
+
 .order{
 	margin: auto;
     display: flex;
     justify-content: center;
     margin-bottom: 100px;
     margin-top: 50px;
+}
+.colorrose2:hover{
+	box-shadow:0px 2px 10px #4e4d4d;
 }
 @keyframes fadein{
 	0%{
@@ -364,10 +385,8 @@ footer .contenair{
 .repas3{
 	animation: fadein 6s;
 }
-.progress {
-    {
+.progress{
         animation: progress-bar 1000ms;
-    }
 }
 .load{
 	z-index: 1;
@@ -423,6 +442,14 @@ footer .contenair{
 	background-color: white;
 	border-radius: 25px;
     position: relative;
+}
+.text{
+	width: 60vw;
+}
+.overflow-ellipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 @media(min-width: 1024px){
@@ -496,7 +523,14 @@ footer .contenair{
 	.ohmyfood{
 		font-size: 30px;
 	}
-	.fas{
+	.fa-arrow-left{
 		margin-left: 1rem;
+	}
+	.option2:hover{
+		display: grid;
+		grid-template-columns: 10fr 1fr;   
+	}
+	.text{
+		width:auto;
 	}
 }
