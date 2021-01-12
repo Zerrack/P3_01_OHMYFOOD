@@ -81,7 +81,7 @@ p{
 	box-shadow: 0px 2px 10px #C7C7C7;
 }
 .option2:hover .text{
-	width:calc(75vw - 50px);
+	width:calc(75%vw - 50px);
 }
 main{
 	text-align: center;
@@ -449,7 +449,7 @@ footer .contenair{
     position: relative;
 }
 .text{
-	width: 75vw;
+	width: 75%;
 }
 .overflow-ellipsis {
 	white-space: nowrap;
